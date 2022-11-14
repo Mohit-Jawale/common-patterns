@@ -15,3 +15,26 @@ class Solution:
             i+=1
 
 ### Soltuion 2
+
+class Solution:
+    def checkInclusion(self, s1: str, s2: str) -> bool:
+        
+        counter_s1 = Counter(s1)
+        window_size = len(s1)
+        matches = 0
+        for i in range(len(s2)):
+            if s2[i] in counter_s1:
+                counter_s1[s2[i]]-=1
+                if counter_s1[s2[i]]==0:
+                    matches +=1
+
+            if i>=window_size and s2[i-window_size] in counter_s1:
+                if counter_s1[s2[i-window_size]]==0:
+                    matches-=1
+                counter_s1[s2[i-window_size]]+=1
+
+            if matches == len(counter_s1):
+                return True
+
+        return False
+

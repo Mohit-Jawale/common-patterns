@@ -33,6 +33,7 @@ class Solution:
                     rank[rootX]+=1
                 
             else:
+                ##### This helps to detect cycle in the graph
                 return True
          
 

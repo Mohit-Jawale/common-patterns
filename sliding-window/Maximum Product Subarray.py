@@ -1,5 +1,10 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
+        
+        #### This is not same as other sliding window problem however there are total 3 cases you should think -:
+        #### 1) Array has only positive numbers
+        #### 2) Array has zero as partition
+        #### 3) Array has negative and postive number.
 
         i,j = 0 ,0 
         product = 1
